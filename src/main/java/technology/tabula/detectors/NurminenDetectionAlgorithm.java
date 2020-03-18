@@ -106,7 +106,7 @@ public class NurminenDetectionAlgorithm implements DetectionAlgorithm {
         BufferedImage image;
         PDPage pdfPage = page.getPDPage();
         try {
-            image = Utils.pageConvertToImage(pdfPage, 144, ImageType.GRAY);
+            image = Utils.pageConvertToImage(pdfPage, 300, ImageType.GRAY);
         } catch (IOException e) {
             return new ArrayList<>();
         }
@@ -117,7 +117,7 @@ public class NurminenDetectionAlgorithm implements DetectionAlgorithm {
         PDDocument removeTextDocument = null;
         try {
             removeTextDocument = this.removeText(pdfPage);
-            image = Utils.pageConvertToImage(pdfPage, 144, ImageType.GRAY);
+            image = Utils.pageConvertToImage(pdfPage, 300, ImageType.GRAY);
         } catch (Exception e) {
             return new ArrayList<>();
         } finally {
